@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { ImageViewer } from "../../components/ImageViewer/ImageViewer";
-import { Button } from "../../components/Button/Button";
+import { Button } from "../../components/Buttons/Button";
 
 const PlaceHolderImage = require("../../../assets/background-image.png");
 
@@ -12,7 +12,7 @@ export const Product = () => {
         <ImageViewer placeholderImageSource={PlaceHolderImage} />
       </View>
       <View style={styles.footContainer}>
-        <Button label="Choose photo" />
+        <Button theme="primary" label="Choose photo" />
         <Button label="Use this photo" />
       </View>
       <StatusBar style="auto" />

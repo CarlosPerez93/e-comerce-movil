@@ -1,6 +1,6 @@
 import { StyleSheet, View, Pressable, Text } from "react-native";
 
-export const Button = ({ label }) => {
+export const DefaultButton = ({ label }) => {
   return (
     <View style={styles.buttonContainer}>
       <Pressable
@@ -30,9 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
   },
-  buttonIcon: {
-    paddingRight: 8,
-  },
+
   buttonLabel: {
     color: "#fff",
     fontSize: 16,
