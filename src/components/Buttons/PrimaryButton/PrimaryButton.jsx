@@ -17,10 +17,10 @@ export const PrimaryButton = ({ label }) => {
           name="picture-o"
           size={18}
           color="#25292e"
-          style={styles.buttonIcon}
+          style={[styles.buttonIcon]}
         />
+        <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
       </Pressable>
-      <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
     </View>
   );
 };
