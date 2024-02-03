@@ -11,7 +11,7 @@ const PlaceHolderImage = require("../../../assets/background-image.png");
 
 export const PickImageAsync = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-
+  const [showModalOptions, setShowMOdalOptions] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -20,14 +20,21 @@ export const PickImageAsync = () => {
           selectedImage={selectedImage}
         />
       </View>
-      <View style={styles.footContainer}>
-        <Button
-          theme="primary"
-          label="Choose photo"
-          onPress={() => handlePickImage(setSelectedImage)}
-        />
-        <Button label="Use this photo" />
-      </View>
+      {showModalOptions ? (
+        <View />
+      ) : (
+        <View style={styles.footContainer}>
+          <Button
+            theme="primary"
+            label="Choose photo"
+            onPress={() => handlePickImage(setSelectedImage)}
+          />
+          <Button
+            label="Use this photo"
+            onPress={() => setShowMOdalOptions(true)}
+          />
+        </View>
+      )}
       <StatusBar style="auto" />
     </View>
   );

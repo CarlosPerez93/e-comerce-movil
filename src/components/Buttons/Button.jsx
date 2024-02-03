@@ -7,7 +7,7 @@ export const Button = ({ theme, label, onPress }) => {
       {theme === "primary" ? (
         <PrimaryButton label={label} onPress={onPress} />
       ) : (
-        <DefaultButton label={label} />
+        <DefaultButton label={label} onPress={onPress} />
       )}
     </>
   );
