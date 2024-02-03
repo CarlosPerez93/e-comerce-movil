@@ -8,6 +8,7 @@ import { OptionsButton } from "../Buttons/OptionsButton";
 
 import { handlePickImage } from "../../hooks/useSelectImage";
 import { EmojiPicker } from "../Modal/EmojiPicker/EmojiPicker";
+import { EmojiList } from "../EmojiList/EmojiList";
 
 const PlaceHolderImage = require("../../../assets/background-image.png");
 
@@ -26,10 +27,9 @@ export const PickImageAsync = () => {
           placeholderImageSource={PlaceHolderImage}
           selectedImage={selectedImage}
         />
-        <EmojiPicker
-          isVisible={isModalVisible}
-          onClose={onModalClose}
-        ></EmojiPicker>
+        <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
+          <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
+        </EmojiPicker>
       </View>
       {showAppOptions ? (
         <OptionsButton

@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { FlatList, Image, Platform, Pressable } from "react-native";
+import { FlatList, Image, Platform, Pressable, StyleSheet } from "react-native";
 
 export const EmojiList = ({ onSelect, onCloseModal }) => {
   const [emoji] = useState([
-    require("../../../assets/emojis/dace-crazy.png"),
-    require("../../../assets/emojis/dace-love.png"),
+    require("../../../assets/emojis/face-crazy.png"),
+    require("../../../assets/emojis/face-love.png"),
   ]);
+
+  console.log(emoji);
   return (
     <FlatList
       horizontal
@@ -19,7 +21,7 @@ export const EmojiList = ({ onSelect, onCloseModal }) => {
             onCloseModal();
           }}
         >
-          <Image source={item} key={index} style={style.image} />
+          <Image source={item} key={index} style={styles.image} />
         </Pressable>;
       }}
     />
