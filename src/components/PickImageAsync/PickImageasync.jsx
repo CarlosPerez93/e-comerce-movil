@@ -6,12 +6,13 @@ import { Button } from "../Buttons/Button";
 import { ImageViewer } from "../ImageViewer/ImageViewer";
 
 import { handlePickImage } from "../../hooks/useSelectImage";
+import { OptionsButton } from "../Buttons/OptionsButton";
 
 const PlaceHolderImage = require("../../../assets/background-image.png");
 
 export const PickImageAsync = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [showModalOptions, setShowMOdalOptions] = useState(false);
+  const [showAppOptions, setShowAppOptions] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -20,18 +21,18 @@ export const PickImageAsync = () => {
           selectedImage={selectedImage}
         />
       </View>
-      {showModalOptions ? (
-        <View />
+      {showAppOptions ? (
+        <OptionsButton setShowAppOptions={setShowAppOptions} />
       ) : (
         <View style={styles.footContainer}>
           <Button
             theme="primary"
             label="Choose photo"
-            onPress={() => handlePickImage(setSelectedImage)}
+            onPress={() => handlePickImage(setSelectedImage, setShowAppOptions)}
           />
           <Button
             label="Use this photo"
-            onPress={() => setShowMOdalOptions(true)}
+            onPress={() => setShowAppOptions(true)}
           />
         </View>
       )}
