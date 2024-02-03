@@ -1,7 +1,5 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { Product } from "./src/pages/Product/Product";
+import { PickImageAsync } from "./src/components/PickImageAsync/PickImageasync";
 
 export default function App() {
-  return <Product />;
+  return <PickImageAsync />;
 }

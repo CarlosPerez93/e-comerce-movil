@@ -2,14 +2,14 @@ import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
 
-import { Button } from "../../components/Buttons/Button";
-import { ImageViewer } from "../../components/ImageViewer/ImageViewer";
+import { Button } from "../Buttons/Button";
+import { ImageViewer } from "../ImageViewer/ImageViewer";
 
 import { handlePickImage } from "../../hooks/useSelectImage";
 
 const PlaceHolderImage = require("../../../assets/background-image.png");
 
-export const Product = () => {
+export const PickImageAsync = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
