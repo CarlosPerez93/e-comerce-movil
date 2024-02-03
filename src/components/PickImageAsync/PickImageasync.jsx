@@ -4,15 +4,21 @@ import { View, StyleSheet } from "react-native";
 
 import { Button } from "../Buttons/Button";
 import { ImageViewer } from "../ImageViewer/ImageViewer";
+import { OptionsButton } from "../Buttons/OptionsButton";
 
 import { handlePickImage } from "../../hooks/useSelectImage";
-import { OptionsButton } from "../Buttons/OptionsButton";
+import { EmojiPicker } from "../Modal/EmojiPicker/EmojiPicker";
 
 const PlaceHolderImage = require("../../../assets/background-image.png");
 
 export const PickImageAsync = () => {
+  const [pickedEmoji, setPickedEmoji] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAppOptions, setShowAppOptions] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const onModalClose = () => setIsModalVisible(false);
+  const onAddSticker = () => setIsModalVisible(true);
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -20,15 +26,22 @@ export const PickImageAsync = () => {
           placeholderImageSource={PlaceHolderImage}
           selectedImage={selectedImage}
         />
+        <EmojiPicker
+          isVisible={isModalVisible}
+          onClose={onModalClose}
+        ></EmojiPicker>
       </View>
       {showAppOptions ? (
-        <OptionsButton setShowAppOptions={setShowAppOptions} />
+        <OptionsButton
+          setShowAppOptions={setShowAppOptions}
+          onAddSticker={onAddSticker}
+        />
       ) : (
         <View style={styles.footContainer}>
           <Button
             theme="primary"
             label="Choose photo"
-            onPress={() => handlePickImage(setSelectedImage, setShowAppOptions)}
+            onPress={() => handlePickImage(setSelectedImage)}
           />
           <Button
             label="Use this photo"

@@ -2,11 +2,11 @@ import { StyleSheet, View } from "react-native";
 import { IconButton } from "./Iconbutton/Iconbutton";
 import { CircleButton } from "./CicleButton/CircleButton";
 
-export const OptionsButton = (setShowAppOptions) => {
+export const OptionsButton = ({ setShowAppOptions, onAddSticker }) => {
   const onReset = () => {
     setShowAppOptions(false);
   };
-  const onAddSticker = () => {};
+
   const onSaveImageAsync = () => {};
   return (
     <View style={styles.optionsContainer}>
