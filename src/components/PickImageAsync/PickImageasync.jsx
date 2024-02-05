@@ -3,12 +3,13 @@ import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
 
 import { Button } from "../Buttons/Button";
+import { EmojiList } from "../EmojiList/EmojiList";
 import { ImageViewer } from "../ImageViewer/ImageViewer";
 import { OptionsButton } from "../Buttons/OptionsButton";
+import { EmojiSticker } from "../EmojiList/EmojiSticker/EmojiSticker";
+import { EmojiPicker } from "../Modal/EmojiPicker/EmojiPicker";
 
 import { handlePickImage } from "../../hooks/useSelectImage";
-import { EmojiPicker } from "../Modal/EmojiPicker/EmojiPicker";
-import { EmojiList } from "../EmojiList/EmojiList";
 
 const PlaceHolderImage = require("../../../assets/background-image.png");
 
@@ -20,6 +21,7 @@ export const PickImageAsync = () => {
 
   const onModalClose = () => setIsModalVisible(false);
   const onAddSticker = () => setIsModalVisible(true);
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -27,6 +29,9 @@ export const PickImageAsync = () => {
           placeholderImageSource={PlaceHolderImage}
           selectedImage={selectedImage}
         />
+        {pickedEmoji && (
+          <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />
+        )}
         <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
           <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
         </EmojiPicker>

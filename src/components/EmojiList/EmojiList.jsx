@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FlatList, Platform, StyleSheet } from "react-native";
 
-import { ItemSelect } from "../ItemSelect/ItemSelect";
+import { EmojiSelect } from "./EmojiSelect/EmojiSelect";
 
 export const EmojiList = ({ onSelect, onCloseModal }) => {
   const [emoji] = useState([
@@ -16,11 +16,11 @@ export const EmojiList = ({ onSelect, onCloseModal }) => {
       data={emoji}
       contentContainerStyle={styles.listContainer}
       renderItem={({ item, index }) => (
-        <ItemSelect
+        <EmojiSelect
           index={index}
           item={item}
-          onSelect={() => onSelect}
-          onCloseModal={() => onCloseModal}
+          onSelect={onSelect}
+          onCloseModal={onCloseModal}
         />
       )}
     />

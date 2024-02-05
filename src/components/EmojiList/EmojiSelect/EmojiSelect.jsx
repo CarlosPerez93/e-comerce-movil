@@ -1,6 +1,6 @@
 import { Image, Pressable, StyleSheet } from "react-native";
 
-export const ItemSelect = ({ item, index, onSelect, onCloseModal }) => {
+export const EmojiSelect = ({ item, index, onSelect, onCloseModal }) => {
   return (
     <Pressable
       onPress={() => {
