@@ -9,7 +9,7 @@ import { OptionsButton } from "../../components/Buttons/OptionsButton";
 import { EmojiSticker } from "../../components/EmojiList/EmojiSticker/EmojiSticker";
 import { EmojiPicker } from "../../components/Modal/EmojiPicker/EmojiPicker";
 
-import { handlePickImage } from "../../hooks/useSelectImage";
+import { handlePickImage } from "../../hooks";
 
 const PlaceHolderImage = require("../../../assets/background-image.png");
 
