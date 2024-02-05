@@ -1,5 +1,5 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { PickImageAsync } from "./src/components/PickImageAsync/PickImageasync";
+import { PickImageAsync } from "./src/pages/PickImageAsync/PickImageasync";
 import { StyleSheet } from "react-native";
 
 export default function App() {

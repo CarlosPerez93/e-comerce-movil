@@ -2,12 +2,12 @@ import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
 
-import { Button } from "../Buttons/Button";
-import { EmojiList } from "../EmojiList/EmojiList";
-import { ImageViewer } from "../ImageViewer/ImageViewer";
-import { OptionsButton } from "../Buttons/OptionsButton";
-import { EmojiSticker } from "../EmojiList/EmojiSticker/EmojiSticker";
-import { EmojiPicker } from "../Modal/EmojiPicker/EmojiPicker";
+import { Button } from "../../components/Buttons/Button";
+import { EmojiList } from "../../components/EmojiList/EmojiList";
+import { ImageViewer } from "../../components/ImageViewer/ImageViewer";
+import { OptionsButton } from "../../components/Buttons/OptionsButton";
+import { EmojiSticker } from "../../components/EmojiList/EmojiSticker/EmojiSticker";
+import { EmojiPicker } from "../../components/Modal/EmojiPicker/EmojiPicker";
 
 import { handlePickImage } from "../../hooks/useSelectImage";
 
