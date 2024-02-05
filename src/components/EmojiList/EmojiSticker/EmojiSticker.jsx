@@ -1,26 +1,35 @@
-import { View } from "react-native";
 import { GestureDetector } from "react-native-gesture-handler";
 import Animated, { useSharedValue } from "react-native-reanimated";
 
-import { useDoubleTap, useImageStyle } from "../../../hooks";
+import {
+  useDrag,
+  useDoubleTap,
+  useImageStyle,
+  useContainerStyle,
+} from "../../../hooks";
 
 export const EmojiSticker = ({ imageSize, stickerSource }) => {
+  const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
+
+  const drag = useDrag(translateX, translateY);
   const scaleImage = useSharedValue(imageSize);
+  const doubleTap = useDoubleTap(scaleImage, imageSize);
+
   const imageStyle = useImageStyle(scaleImage);
-  const doubleTap = useDoubleTap({
-    scaleImage: scaleImage,
-    imageSize: imageSize,
-  });
+  const containerStyle = useContainerStyle(translateX, translateY);
 
   return (
-    <View style={{ top: -350 }}>
-      <GestureDetector gesture={doubleTap}>
-        <Animated.Image
-          source={stickerSource}
-          resizeMode="contain"
-          style={[imageStyle, { width: imageSize, height: imageSize }]}
-        />
-      </GestureDetector>
-    </View>
+    <GestureDetector gesture={drag}>
+      <Animated.View style={[containerStyle, { top: -350 }]}>
+        <GestureDetector gesture={doubleTap}>
+          <Animated.Image
+            source={stickerSource}
+            resizeMode="contain"
+            style={[imageStyle, { width: imageSize, height: imageSize }]}
+          />
+        </GestureDetector>
+      </Animated.View>
+    </GestureDetector>
   );
 };

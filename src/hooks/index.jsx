@@ -1,3 +1,5 @@
+export { useDrag } from "./useDrag";
 export { useDoubleTap } from "./useDoubleTap";
-export { useImageStyle } from "./useImageStyle";
 export { handlePickImage } from "./useSelectImage";
+
+export { useImageStyle, useContainerStyle } from "./useStyles";

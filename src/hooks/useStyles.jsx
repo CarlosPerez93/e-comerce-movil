@@ -7,3 +7,13 @@ export const useImageStyle = (selectImage) =>
       height: withSpring(selectImage.value),
     };
   });
+
+export const useContainerStyle = (translateX, translateY) =>
+  useAnimatedStyle(() => {
+    return {
+      transform: [
+        { translateX: withSpring(translateX.value) },
+        { translateY: withSpring(translateY.value) },
+      ],
+    };
+  });

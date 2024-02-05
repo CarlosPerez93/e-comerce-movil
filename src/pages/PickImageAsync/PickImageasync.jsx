@@ -4,10 +4,10 @@ import { View, StyleSheet } from "react-native";
 
 import { Button } from "../../components/Buttons/Button";
 import { EmojiList } from "../../components/EmojiList/EmojiList";
+import { EmojiPicker } from "../../components/Modal/EmojiPicker";
 import { ImageViewer } from "../../components/ImageViewer/ImageViewer";
 import { OptionsButton } from "../../components/Buttons/OptionsButton";
 import { EmojiSticker } from "../../components/EmojiList/EmojiSticker/EmojiSticker";
-import { EmojiPicker } from "../../components/Modal/EmojiPicker/EmojiPicker";
 
 import { handlePickImage } from "../../hooks";
 

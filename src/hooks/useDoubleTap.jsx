@@ -1,6 +1,6 @@
 import { Gesture } from "react-native-gesture-handler";
 
-export const useDoubleTap = ({ scaleImage, imageSize }) =>
+export const useDoubleTap = (scaleImage, imageSize) =>
   Gesture.Tap()
     .numberOfTaps(2)
     .onStart(() => {
